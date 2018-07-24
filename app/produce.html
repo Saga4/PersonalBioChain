@@ -1,29 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-  <title>MetaCoin - Truffle Webpack Demo w/ Frontend</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <script src="./app.js"></script>
-</head>
-<body>
-  <h1>MetaCoin</h1>
-  <h2>Example Truffle Dapp</h2>
-  <h3>You have <span class="black"><span id="balance"></span> META</span></h3>
-
-  <br>
-  <h1>Send MetaCoin</h1>
-  <br><label for="amount">Amount:</label><input type="text" id="amount" placeholder="e.g., 95"></input>
-  <br><label for="receiver">To Address:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
-  <br><br><button id="send" onclick="App.sendCoin()">Send MetaCoin</button>
-  <br><br>
-  <span id="status"></span>
-  <br>
-  <span class="hint"><strong>Hint:</strong> open the browser developer console to view any errors and warnings.</span>
-</body>
-</html>
--->
-
 
 <!DOCTYPE HTML>
 <html>
@@ -79,6 +53,49 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+
+
+
+	<style>
+	body {font-family: Arial, Helvetica, sans-serif;}
+
+	input[type=text], select, textarea {
+	    width: 100%;
+	    padding: 12px;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	    box-sizing: border-box;
+	    margin-top: 6px;
+	    margin-bottom: 16px;
+	    resize: vertical;
+	}
+
+	
+	input[type=submit] {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 12px 20px;
+	    border: none;
+	    border-radius: 4px;
+	    cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	    background-color: #45a049;
+	}
+
+	
+	.formcontainer {
+	    border-radius: 5px;
+	    background-color: #f2f2f2;
+	    padding: 20px;
+	}
+	
+	</style>
+
+
+
+
 	</head>
 	<body>
 		
@@ -109,42 +126,20 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(../app/images/main_back.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h1>Online Personality. Secure Identity.</h1>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(../app/images/main_back.jpg);">
+			   	
+			   	<li >
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
 				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h1>Some text</h1>
+				   					<h3>Generate record for some entity. You will be the author of this record</h3>
 				   				</div>
 				   			</div>
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(../app/images/main_back.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h1>Some text</h1>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
+			   	
 			  	</ul>
 		  	</div>
 		</aside>
@@ -152,34 +147,67 @@
 		<div id="colorlib-intro">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 intro-wrap animate-box">
-						<div class="intro-flex">
-							<div class="one-third intro-img" style="background-image: url(../app/images/main_back.jpg)">
-								<div class="desc">
-									<a href="../app/produce.html">
-										<h3>Generate/Produce</h3>
-										<p>Generate a new record for a person</p>
-									</a>
-								</div>
-							</div>
-							<div class="one-third intro-img" style="background-image: url(../app/images/main_back.jpg)">
-								<div class="desc">
-									<a href="approvals.html">
-										<h3>Approvals/Consent</h3>
-										<p>View approval/consent status</p>
-									</a>
-								</div>
-							</div>
-							<div class="one-third intro-img" style="background-image: url(../app/images/main_back.jpg)">
-								<div class="desc">
-									<a href="finalize.html">
-										<h3>Finalize</h3>
-										<p>Finalize the record to be permanently added to the system</p>
-									</a>
-								</div>
-							</div>
+					<div class="row">
+
+				   		<h3 align="center" >Record you want to generate</h3>
+
+						<div class="formcontainer">
+						   <form >  <!-- action="/action_page.php" -->
+						    <label for="author">Author</label>
+						    <input type="text" id="author" name="author" placeholder="Your id, name">
+
+						    <label for="stakeholder">Stakeholder</label>
+						    <input type="text" id="stakeholder" name="stakeholder" placeholder="Stakeholder id, name">
+						    <label>Add Stakeholder</label>
+						   	<button class="w3-button w3-xlarge w3-teal">+</button>
+						    <br/>
+							<br/>
+
+						    <label for="doc-type">Document Type</label>
+						    <select id="doc-type" name="doc-type">
+						      <option value="educational">educational</option>
+						      <option value="professional">professional</option>
+						      <option value="identity">identity</option>
+						    </select>
+
+						    <br/>
+							<br/>
+							
+							<label for="docName">Doc Name</label>
+							<input type="text" id="docName" name="docName" placeholder="Document Name">
+							
+							<br/>
+							<br/>
+
+
+						    <label >Document:  </label>
+							<!-- <form action="/action_page.php"> -->
+							  <input type="file" name="pic" accept=".jpg, .jpeg, .png, .pdf">
+							  <input type="submit" value="Upload document">
+							<!-- </form> -->
+
+
+							<br/>
+							<br/>
+
+
+
+						    
+						    <label >Validity:  </label>
+						    <input type="date" name="validfrom">
+						    <label >  to  </label>
+						    <input type="date" name="validto">
+						    <br/>
+						    <br/>
+						    
+						    <!--
+						    <label for="subject">Subject</label>
+						    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+							-->
+						    <input type="submit" value="Submit the record for approval by the stakeholders" onsubmit="addData.add()">
+						  </form>
 						</div>
-		         </div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -717,5 +745,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	</body>
 </html>
-
 
