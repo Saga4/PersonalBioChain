@@ -108,10 +108,13 @@ console.log("add func");
     var docId="abc";//AddObjectIPFS(filereader(filepath));
 
     //this.setStatus("Initiating record creation... (please wait)");
-
+    var pd;
+    
     PersonalData.deployed().then(function(instance) {
+      //account = "0x3d5cdb8cc6e6e59adf8de6ab91fed8782a6fcdbb";
+      alert(account);
       pd = instance;
-      return pd.AddPersonalData(author, stakeholder, docName, docType, docId, validFrom, validTo, {from: accounts[0]});
+      return pd.AddPersonalData(author, stakeholder, docName, docType, docId, validFrom, validTo, {from: account});
     }).then((result) => {              
       console.log("Stakeholder record added")
       window.alert("Your data is added successfully !!")

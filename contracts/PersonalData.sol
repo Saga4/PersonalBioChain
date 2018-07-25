@@ -11,8 +11,8 @@ contract PersonalData
         string docName;
         string docType;
         string docId;
-        uint validFrom;
-        uint validTo;
+        string validFrom;
+        string validTo;
         //image doc;
     }
 
@@ -20,7 +20,7 @@ contract PersonalData
     mapping(uint => Node) Pdata;
     //mapping(unit => mapping(uint=> Node)) PData;
 
-    function AddPersonalData(string authorityId, string stakeholderId, string docName, string docType, string docId, uint validFrom, uint validTo) public
+    function AddPersonalData(string authorityId, string stakeholderId, string docName, string docType, string docId, string validFrom, string validTo) public
     {
         Node memory newData;
         newData.authorityId = authorityId;

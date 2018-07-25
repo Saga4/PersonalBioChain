@@ -156,10 +156,10 @@
 						<div class="formcontainer">
 						   <form >  <!-- action="/action_page.php" -->
 						    <label for="author">Author</label>
-						    <input type="text" id="author" name="author" placeholder="Your id, name">
+						    <input type="text" id="author" name="author" placeholder="Your id, name" value="1">
 
 						    <label for="stakeholder">Stakeholder</label>
-						    <input type="text" id="stakeholder" name="stakeholder" placeholder="Stakeholder id, name">
+						    <input type="text" id="stakeholder" name="stakeholder" placeholder="Stakeholder id, name" value="22">
 						    <label>Add Stakeholder</label>
 						   	<button class="w3-button w3-xlarge w3-teal">+</button>
 						    <br/>
@@ -167,7 +167,7 @@
 
 						    <label for="doc-type">Document Type</label>
 						    <select id="doc-type" name="doc-type">
-						      <option value="educational">educational</option>
+						      <option value="educational" selected>educational</option>
 						      <option value="professional">professional</option>
 						      <option value="identity">identity</option>
 						    </select>
@@ -176,7 +176,7 @@
 							<br/>
 							
 							<label for="docName">Doc Name</label>
-							<input type="text" id="docName" name="docName" placeholder="Document Name">
+							<input type="text" id="docName" name="docName" placeholder="Document Name" value="mark">
 							
 							<br/>
 							<br/>
@@ -196,9 +196,9 @@
 
 						    
 						    <label >Validity:  </label>
-						    <input type="date" name="validfrom" id="validfrom">
+						    <input name="validfrom" id="validfrom" value="02/15/2012">
 						    <label >  to  </label>
-						    <input type="date" name="validto" id="validto">
+						    <input name="validto" id="validto" value="05/25/2016">
 						    <br/>
 						    <br/>
 						    
@@ -208,7 +208,7 @@
 							-->
 						    <input type="button" value="Submit the record for approval by the stakeholders" onclick="App.add()">
 						  </form>
-						</div>
+						</div
 					</div>
 				</div>
 			</div>
