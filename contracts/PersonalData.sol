@@ -59,7 +59,7 @@ contract PersonalData
     } */
 
     //mapping (uint => Node) nodeList;
-    function GetStudDoc(string stakeholderId, string docType) public returns (Node[])
+    function GetStudDoc(string stakeholderId, string docType) public view returns (string[3])
     {
         //Node[] memory nodeList = new Node[]();
         Node[] nodeList;
@@ -81,8 +81,8 @@ contract PersonalData
                 }
            }
         }
-
-        return (nodeList);
+        string[3] memory testStr = ["str1", "str2", "str3"];
+        return testStr;
     }
 
     function stringsEqual(string memory _a, string memory _b) public returns (bool) 
@@ -100,13 +100,13 @@ contract PersonalData
         return res;
     }
 
-    function test (string stakeholderId, string docType) public returns (string docId, string docName)
-    {
-        Node[] memory nodeList = GetStudDoc("22", "edu");
+    //function test (string stakeholderId, string docType) public returns (string docId, string docName)
+    //{
+    //    Node[] memory nodeList = GetStudDoc("22", "edu");
         //for (uint i = 0; i < totalEntries; i ++)
         //{
-            docId = nodeList[1].docId;
-            docName = nodeList[0].docName;
+    //        docId = nodeList[1].docId;
+    //        docName = nodeList[0].docName;
         //}
-    }
+    //}
 }

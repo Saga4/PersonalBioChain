@@ -3,7 +3,7 @@ import "../css/app.css";
 import isString from 'lodash/fp/isString';
 import IPFS from 'ipfs-mini';
 // Import libraries we need.
-import { default as Web3} from 'web3';
+import { default as Web3 } from 'web3';
 import { default as contract } from 'truffle-contract'
 import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from "constants";
 
@@ -20,14 +20,14 @@ var accounts;
 var account;
 
 window.App = {
-  start: function() {
+  start: function () {
     var self = this;
 
     // Bootstrap the MetaCoin abstraction for Use.
     PersonalData.setProvider(web3.currentProvider);
 
     // Get the initial account balance so it can be displayed.
-    web3.eth.getAccounts(function(err, accs) {
+    web3.eth.getAccounts(function (err, accs) {
       if (err != null) {
         //alert("There was an error fetching your accounts.");
         return;
@@ -45,62 +45,60 @@ window.App = {
     });
   },
 
-filereader:function(filepath)
-  {
+  filereader: function (filepath) {
     var filereader = new FileReader()
     var file = new File(filepath)
     filereader.readAsArrayBuffer(file)
-    filereader.onload = function()
-    {
+    filereader.onload = function () {
       var data = filereader.result
       var buffer = Buffer.from(data)
-      var content=[]
+      var content = []
       content.push(
         {
-          path:filepath,
-          content:buffer
+          path: filepath,
+          content: buffer
 
         })
     }
-},
-  
+  },
 
 
-GetDataIpfs:function (multihash) {
-  if (!isString(multihash)) {
-    return new Error('multihash must be String')
-  } else if (!multihash.startsWith('Qm')) {
-    return new Error('multihash must start with "Qm"')
-  }
 
-  return new Promise((resolve, reject) => {
-    _ipfs.files.cat(multihash, (err, result) => {
-      if (err) reject(new Error(err))
-      resolve(result)
+  GetDataIpfs: function (multihash) {
+    if (!isString(multihash)) {
+      return new Error('multihash must be String')
+    } else if (!multihash.startsWith('Qm')) {
+      return new Error('multihash must start with "Qm"')
+    }
+
+    return new Promise((resolve, reject) => {
+      _ipfs.files.cat(multihash, (err, result) => {
+        if (err) reject(new Error(err))
+        resolve(result)
+      })
     })
-  })
-},
+  },
 
-AddObjectIPFS:function (obj) {
-  const CID = new Promise((resolve, reject) => {
-    _ipfs.files.add(obj, (err, result) => {
-      if (err) reject(new Error(err))
-      resolve(result)
+  AddObjectIPFS: function (obj) {
+    const CID = new Promise((resolve, reject) => {
+      _ipfs.files.add(obj, (err, result) => {
+        if (err) reject(new Error(err))
+        resolve(result)
+      })
     })
-  })
-  console.log('CID:', CID)
-  return CID
-},
+    console.log('CID:', CID)
+    return CID
+  },
 
   //document.getElementById("Demo").onclick= function(){add();};
 
-upload:function() {
+  upload: function () {
     const reader = new FileReader();
-    reader.onloadend = function() {
+    reader.onloadend = function () {
       const ipfs = window.IpfsApi('localhost', 5001) // Connect to IPFS
       const buf = buffer.Buffer(reader.result) // Convert data into buffer
       ipfs.files.add(buf, (err, result) => { // Upload buffer to IPFS
-        if(err) {
+        if (err) {
           console.error(err)
           return
         }
@@ -116,10 +114,8 @@ upload:function() {
     // reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
   },
 
-  add: function() {
-console.log("add func");
-
-    var self = this;
+  add: function () {
+    console.log("add func");
 
     var author = document.getElementById("author").value;
     var stakeholder = document.getElementById("stakeholder").value;
@@ -128,27 +124,55 @@ console.log("add func");
     var validFrom = document.getElementById("validfrom").value;
     var validTo = document.getElementById("validto").value;
     var docpath = document.getElementById("docpath").baseURI;
-    var filepath=self.AddObjectIPFS(self.filereader(docpath));
-
-    alert(filepath);
+    // var filepath=self.AddObjectIPFS(self.filereader(docpath));
+    var docId = "0x3d5cdb8cde6ab91fed8782a6fc"; // TODO:Change this with ipfs generated hash
+    // alert(filepath);
 
     //this.setStatus("Initiating record creation... (please wait)");
     var pd;
-    
-    PersonalData.deployed().then(function(instance) {
+
+    PersonalData.deployed().then(function (instance) {
       //account = "0x3d5cdb8cc6e6e59adf8de6ab91fed8782a6fcdbb";
       alert(account);
       pd = instance;
-      return pd.AddPersonalData(author, stakeholder, docName, docType, docId, validFrom, validTo, {from: account});
-    }).then((result) => {              
+      return pd.AddPersonalData(author, stakeholder, docName, docType, docId, validFrom, validTo, { from: account });
+    }).then((result) => {
       console.log("Stakeholder record added")
       window.alert("Your data is added successfully !!")
       location.reload();
-  })
+    })
+  },
+
+  show: function () {
+    var stakeholder = document.getElementById("stakeholder").value;
+    var docType = document.getElementById("doc-type").value;
+    var pd;
+
+    // MetaCoin.deployed().then(function(instance) {
+    //   meta = instance;
+    //   return meta.getBalance.call(account, {from: account});
+    // }).then(function(value) {
+    //   var balance_element = document.getElementById("balance");
+    //   balance_element.innerHTML = value.valueOf();
+    // }).catch(function(e) {
+    //   console.log(e);
+    //   self.setStatus("Error getting balance; see log.");
+    // });
+
+    PersonalData.deployed().then(function (instance) {
+      alert(account);
+      pd = instance;
+      return pd.GetStudDoc.call(stakeholder, docType, { from: account });
+    }).then((result) => {
+      console.log(result);
+      console.log("Stakeholder record retrieved")
+      window.alert("Your data is retrieved successfully !!")
+      // location.reload();
+    })
   }
 };
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
     console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
