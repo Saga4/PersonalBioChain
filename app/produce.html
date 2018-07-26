@@ -101,627 +101,197 @@
 	</head>
 	<body>
 		
-	<div class="colorlib-loader"></div>
-
-	<div id="page">
-		<nav class="colorlib-nav" role="navigation">
-			<div class="top-menu">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-2">
-							<div id="colorlib-logo"><a href="index.html">Personal Biochain</a></div>
-						</div>
-						<div class="col-md-10 text-right menu-1">
-							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="reports.html">Reports</a></li>
-								<li><a href="profile.html">Profile</a></li>
-								<li><a href="view.html">View</a></li>
-								<li><a href="help.html">Help</a></li>
-								<li class="btn-cta"><a href="#"><span><i class="icon-bell"></i></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<aside id="colorlib-hero">
-			<div class="flexslider">
-				<ul class="slides">
-			   	
-			   	<li >
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h3>Generate record for some entity. You will be the author of this record</h3>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	
-			  	</ul>
-		  	</div>
-		</aside>
-		
-		<div id="colorlib-intro">
-			<div class="container">
-				<div class="row">
-					<div class="row">
-
-				   		<h3 align="center" >Record you want to generate</h3>
-
-						<div class="formcontainer">
-						   <form >  <!-- action="/action_page.php" -->
-						    <label for="author">Author</label>
-						    <input type="text" id="author" name="author" placeholder="Your id, name" value="1">
-
-						    <label for="stakeholder">Stakeholder</label>
-						    <input type="text" id="stakeholder" name="stakeholder" placeholder="Stakeholder id, name" value="22">
-						    <label>Add Stakeholder</label>
-						   	<button class="w3-button w3-xlarge w3-teal">+</button>
-						    <br/>
-							<br/>
-
-						    <label for="doc-type">Document Type</label>
-						    <select id="doc-type" name="doc-type">
-						      <option value="educational" selected>educational</option>
-						      <option value="professional">professional</option>
-						      <option value="identity">identity</option>
-						    </select>
-
-						    <br/>
-							<br/>
-							
-							<label for="docName">Doc Name</label>
-							<input type="text" id="docName" name="docName" placeholder="Document Name" value="mark">
-							
-							<br/>
-							<br/>
-
-
-						    <label >Document:  </label>
-							<!-- <form action="/action_page.php"> -->
-							  <input type="file" name="pic" accept=".jpg, .jpeg, .png, .pdf">
-							  <input type="submit" value="Upload document">
-							<!-- </form> -->
-
-
-							<br/>
-							<br/>
-
-
-
-						    
-						    <label >Validity:  </label>
-						    <input name="validfrom" id="validfrom" value="02/15/2012">
-						    <label >  to  </label>
-						    <input name="validto" id="validto" value="05/25/2016">
-						    <br/>
-						    <br/>
-						    
-						    <!--
-						    <label for="subject">Subject</label>
-						    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-							-->
-						    <input type="button" value="Submit the record for approval by the stakeholders" onclick="App.add()">
-						  </form>
-						</div
-					</div>
-				</div>
-			</div>
-		</div>
-		
-
-		<div id="colorlib-services">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Being fit is attractive</h2>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-3 text-center animate-box">
-						<div class="services">
-							<span class="icon">
-								<i class="flaticon-gym"></i>
-							</span>
-							<div class="desc">
-								<h3>Cardio Program</h3>
-								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center animate-box">
-						<div class="services">
-							<span class="icon">
-								<i class="flaticon-weightlifting"></i>
-							</span>
-							<div class="desc">
-								<h3>Body Building</h3>
-								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center animate-box">
-						<div class="services">
-							<span class="icon">
-								<i class="flaticon-martial-arts"></i>
-							</span>
-							<div class="desc">
-								<h3>Karate Classes</h3>
-								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-								</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center animate-box">
-						<div class="services">
-							<span class="icon">
-								<i class="flaticon-gloves"></i>
-							</span>
-							<div class="desc">
-								<h3>Boxing Program</h3>
-								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="colorlib-schedule" class="colorlib-light-grey">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Our Class Schedule</h2>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="schedule text-center animate-box">
-						<div class="col-md-12">
-							<ul class="week">
-								<li class="active"><a href="#">Sunday</a></li>
-								<li><a href="#">Monday</a></li>
-								<li><a href="#">Tuesday</a></li>
-								<li><a href="#">Wednesday</a></li>
-								<li><a href="#">Thursday</a></li>
-								<li><a href="#">Friday</a></li>
-								<li><a href="#">Saturday</a></li>
-							</ul>
-						</div>
-						<div class="schedule-flex">
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-gym"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Cardio Program</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-exercise-2"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Loose Weight Program</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-meditation"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Yoga Classes</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-gloves"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Boxing Program</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-						</div>
-						<div class="schedule-flex">
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-martial-arts"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Karate Classes</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-weightlifting"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Body Building</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-swimmer"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Swimming Program</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-							<div class="entry-forth">
-								<p class="icon"><span><i class="flaticon-man"></i></span></p>
-								<p class="time"><span>06am - 8am</span></p>
-								<h3>Basic Exercise</h3>
-								<p class="trainer"><span>Tom Scott</span></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="colorlib-testimony" class="testimony-img" style="background-image: url(../app/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>What People Says</h2>
-						<h3>Success Stories</h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="row animate-box">
-							<div class="owl-carousel1">
-								<div class="item">
-									<div class="testimony-slide">
-										<div class="testimony-wrap">
-											<blockquote>
-												<span>Sophia Foster Loose 20LBS in just 2 months</span>
-												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-											</blockquote>
-											<div class="figure-img" style="background-image: url(../app/images/person1.jpg);"></div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide">
-										<div class="testimony-wrap">
-											<blockquote>
-												<span>John Collins</span>
-												<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-											</blockquote>
-											<div class="figure-img" style="background-image: url(../app/images/person2.jpg);"></div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide">
-										<div class="testimony-wrap">
-											<blockquote>
-												<span>Adam Ross</span>
-												<p>Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-											</blockquote>
-											<div class="figure-img" style="background-image: url(../app/images/person3.jpg);"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="colorlib-trainers">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Our Experienced Trainers</h2>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-3 col-sm-3 animate-box">
-						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(../app/images/trainer-1.jpg)"></div>
-							<div class="desc">
-								<h3>Diego Carter</h3>
-								<span>Body Building Trainer</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-sm-3 animate-box">
-						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(../app/images/trainer-2.jpg)"></div>
-							<div class="desc">
-								<h3>Lea Young</h3>
-								<span>Body Building Trainer</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-sm-3 animate-box">
-						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(../app/images/trainer-3.jpg)"></div>
-							<div class="desc">
-								<h3>Alysha Reed</h3>
-								<span>Body Building Trainer</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-sm-3 animate-box">
-						<div class="trainers-entry">
-							<div class="trainer-img" style="background-image: url(../app/images/trainer-4.jpg)"></div>
-							<div class="desc">
-								<h3>George Cooper</h3>
-								<span>Body Building Trainer</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="colorlib-classes colorlib-light-grey">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Our Classes</h2>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(../app/images/classes-1.jpg);">
-								<span class="price text-center">$25.00<br><small>/month</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Fitness Gym &amp; Cardio</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(../app/images/classes-2.jpg);">
-								<span class="price text-center">$25.00<br><small>/month</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Strength Training</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="classes">
-							<div class="classes-img" style="background-image: url(../app/images/classes-3.jpg);">
-								<span class="price text-center">$25.00<br><small>/month</small></span>
-							</div>
-							<div class="desc">
-								<h3><a href="#">Yoga Program</a></h3>
-								<p>Pointing has no control about the blind texts it is an almost unorthographic life</p>
-								<p><a href="#" class="btn-learn">Learn More <i class="icon-arrow-right3"></i></a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>	
-		</div>
-
-		<div class="colorlib-event">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Upcoming Events</h2>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-					</div>
-				</div>
-				<div class="row row-pb-sm">
-					<div class="col-md-4 animate-box">
-						<div class="event-entry">
-							<div class="desc">
-								<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
-								<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
-								<h2><a href="event.html">Special Training for Karate at Robust Gym</a></h2>
-							</div>
-							<div class="location">
-								<span class="icon"><i class="icon-map"></i></span>
-								<p>291 South 21th Street, Suite 721 New York NY 10016</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="event-entry">
-							<div class="desc">
-								<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
-								<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
-								<h2><a href="event.html">World Yoga Day at Robust Gym</a></h2>
-							</div>
-							<div class="location">
-								<span class="icon"><i class="icon-map"></i></span>
-								<p>291 South 21th Street, Suite 721 New York NY 10016</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="event-entry">
-							<div class="desc">
-								<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
-								<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
-								<h2><a href="event.html">1st Anniversary of Robust Gym</a></h2>
-							</div>
-							<div class="location">
-								<span class="icon"><i class="icon-map"></i></span>
-								<p>291 South 21th Street, Suite 721 New York NY 10016</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="colorlib-blog colorlib-light-grey">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Recent Blog</h2>
-						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 animate-box">
-						<article class="article-entry">
-							<a href="blog.html" class="blog-img" style="background-image: url(../app/images/blog-1.jpg);">
-								<p class="meta"><span class="day">18</span><span class="month">Apr</span></p>
-							</a>
-							<div class="desc">
-								<p class="admin"><span>Posted by:</span> <span>Noah Henderson</span></p>
-								<h2><a href="blog.html">Need workout motivation?</a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</article>
-					</div>
-					<div class="col-md-4 animate-box">
-						<article class="article-entry">
-							<a href="blog.html" class="blog-img" style="background-image: url(../app/images/blog-2.jpg);">
-								<p class="meta"><span class="day">18</span><span class="month">Apr</span></p>
-							</a>
-							<div class="desc">
-								<p class="admin"><span>Posted by:</span> <span>Noah Henderson</span></p>
-								<h2><a href="blog.html">Need workout motivation?</a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</article>
-					</div>
-					<div class="col-md-4 animate-box">
-						<article class="article-entry">
-							<a href="blog.html" class="blog-img" style="background-image: url(../app/images/blog-3.jpg);">
-								<p class="meta"><span class="day">18</span><span class="month">Apr</span></p>
-							</a>
-							<div class="desc">
-								<p class="admin"><span>Posted by:</span> <span>Noah Henderson</span></p>
-								<h2><a href="blog.html">Need workout motivation?</a></h2>
-								<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-							</div>
-						</article>
-					</div>
-				</div>
-			</div>
-		</div>
-
+		<div class="colorlib-loader"></div>
 	
-		<div id="colorlib-subscribe" class="subs-img" style="background-image: url(../app/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h2>Subscribe Newsletter</h2>
-						<p>Subscribe our newsletter and get latest update</p>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-6 col-md-offset-3">
+		<div id="page">
+			<nav class="colorlib-nav" role="navigation">
+				<div class="top-menu">
+					<div class="container">
 						<div class="row">
-							<div class="col-md-12">
-							<form class="form-inline qbstp-header-subscribe">
-								<div class="col-three-forth">
-									<div class="form-group">
-										<input type="text" class="form-control" id="email" placeholder="Enter your email">
-									</div>
-								</div>
-								<div class="col-one-third">
-									<div class="form-group">
-										<button type="submit" class="btn btn-primary">Subscribe Now</button>
-									</div>
-								</div>
-							</form>
+							<div class="col-md-4">
+								<img src="./app/images/mslogo60ht_1.png">
+								<!--<div id="colorlib-logo"><a href="index.html">Personal Biochain</a></div>-->
+							</div>
+							<div class="col-md-8 text-right menu-1">
+								<ul>
+									<li class="active"><a href="index.html">Home</a></li>
+									<li><a href="reports.html">Reports</a></li>
+									<li><a href="profile.html">Profile</a></li>
+									<li><a href="view.html">View</a></li>
+									<li><a href="help.html">Help</a></li>
+									<li><a href="#"><img src="./app/images/bell40.png"></a></li>
+									<!--<li class="btn-cta"><a href="#"><span><i class="icon-bell"></i></span></a></li>-->
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<footer id="colorlib-footer">
-			<div class="container">
-				<div class="row row-pb-md">
-					<div class="col-md-3 colorlib-widget">
-						<h4>About Robust Gym</h4>
-						<p>Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-						<p>
-							<ul class="colorlib-social-icons">
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-3 colorlib-widget">
-						<h4>Quick Links</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#"><i class="icon-check"></i> About Us</a></li>
-								<li><a href="#"><i class="icon-check"></i> Testimonials</a></li>
-								<li><a href="#"><i class="icon-check"></i> Classes</a></li>
-								<li><a href="#"><i class="icon-check"></i> Blog</a></li>
-								<li><a href="#"><i class="icon-check"></i> Blog</a></li>
-								<li><a href="#"><i class="icon-check"></i> Contact</a></li>
-							</ul>
-						</p>
-					</div>
-
-					<div class="col-md-3 colorlib-widget">
-						<h4>Recent Post</h4>
-						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(../app/images/blog-1.jpg);">
-							</a>
-							<div class="desc">
-								<h2><a href="blog.html">Tips for sexy body</a></h2>
-								<p class="admin"><span>18 April 2018</span></p>
-							</div>
-						</div>
-						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(../app/images/blog-2.jpg);">
-							</a>
-							<div class="desc">
-								<h2><a href="blog.html">Tips for sexy body</a></h2>
-								<p class="admin"><span>18 April 2018</span></p>
-							</div>
-						</div>
-						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(../app/images/blog-3.jpg);">
-							</a>
-							<div class="desc">
-								<h2><a href="blog.html">Tips for sexy body</a></h2>
-								<p class="admin"><span>18 April 2018</span></p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3 colorlib-widget">
-						<h4>Contact Info</h4>
-						<ul class="colorlib-footer-links">
-							<li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
-							<li><a href="tel://1234567920"><i class="icon-phone"></i> + 1235 2355 98</a></li>
-							<li><a href="mailto:info@yoursite.com"><i class="icon-envelope"></i> info@yoursite.com</a></li>
-							<li><a href="http://luxehotel.com"><i class="icon-location4"></i> yourwebsite.com</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="copy">
+			</nav>
+			<aside id="colorlib-hero">
+				<div class="flexslider">
+					<ul class="slides">
+					   <li style="background-image: url(./app/images/main_back.jpg);">
+						   <div class="overlay"></div>
+						   <div class="container-fluid">
+							   <div class="row">
+								   <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+									   <div class="slider-text-inner text-center">
+										   <h3>Unique Digital Identity</h3>
+									   </div>
+								   </div>
+							   </div>
+						   </div>
+					   </li>
+					   <li style="background-image: url(./app/images/main_back.jpg);">
+						   <div class="overlay"></div>
+						   <div class="container-fluid">
+							   <div class="row">
+								   <div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+									   <div class="slider-text-inner text-center">
+										   <h3>Secure Digital Documents</h3>
+									   </div>
+								   </div>
+							   </div>
+						   </div>
+					   </li>
+					   <li style="background-image: url(./app/images/main_back.jpg);">
+						   <div class="overlay"></div>
+						   <div class="container-fluid">
+							   <div class="row">
+								   <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+									   <div class="slider-text-inner text-center">
+										   <h3>Stop Carrying A Paper</h3>
+									   </div>
+								   </div>
+							   </div>
+						   </div>
+					   </li>
+					   <li style="background-image: url(./app/images/main_back.jpg);">
+						   <div class="overlay"></div>
+						   <div class="container-fluid">
+							   <div class="row">
+								   <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+									   <div class="slider-text-inner text-center">
+										   <h3>Showcase Validated Achievements</h3>
+									   </div>
+								   </div>
+							   </div>
+						   </div>
+					   </li>
+					  </ul>
+				  </div>
+			</aside>
+			
+			<!--
+			<div id="colorlib-intro">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12 text-center">
+						<div class="col-md-12 intro-wrap animate-box">
+							<div class="intro-flex">
+								
+							</div>
+					 </div>
+					</div>
+				</div>
+			</div>
+			-->
+	
+			<!-- Form -->
+			<div id="colorlib-intro">
+				<div class="container">
+					<div class="row">			
+					<div class="card-form">
+					  <form class="signup">
+						<div class="form-title">Approve your Details</div>
+						<div class="form-body">
+						  <div class="row">
+							<input type="text" value="MIT " readonly>
+						  </div>
+						  <div class="row">
+							<input type="text" value="Adam" readonly>        
+						  </div>
+						  <div class="row">
+							<select name="Document Type" disabled>
+							  <option value="Educational">Educational</option>
+							  <option value="professional">Professional</option>
+							  <option value="Identity">Identity</option>
+							</select>
+							<input type="text" value="gradesheet" readonly style="padding: 0%"> 
+							<!-- <button>Link!</button> -->
+							<input type="file" name="pic" accept=".jpg, .jpeg, .png, .pdf">
+							<!-- <input type="button" value="Upload document" id="uploadIPFS" >  onclick="App.upload()" -->
+						  </div>
+						  <div class="row">
+							<label>Validity:  </label>
+									<input type="date" name="validfrom"  value="2015-07-04" id="validFrom">
+									<label >  to  </label>
+									<input type="date" name="validto"  value="2019-05-26" id="validTo">                               
+						  </div>
+						</div>
+						<div class="rule"> </div>
+						<br>
+						<div class="form-footer">
+							<div class="row">
+								<div class="col-md-12">
+									<button type="button" class="btn btn-primary">Add</button>
+									<button type="button" class="btn btn-primary">Discard</button>
+								</div>
+							</div>
+						  </div>
+						</div>
+					  </form>
+					</div>
+				</div>
+				</div>
+			</div>
+			<!-- Form End -->
+			
+			<footer id="colorlib-footer">
+				<div class="container">
+					<div class="row row-pb-md">
+						<div class="col-md-6 colorlib-widget">
+							<h4>About Personal Biochain</h4>
+							<p>This is hack project in MS Hack 2018</p>
 							<p>
-								<small class="block">&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small><br> 
-								<small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a>, <a href="http://pexels.com/" target="_blank">Pexels</a></small>
+								<ul class="colorlib-social-icons">
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-facebook"></i></a></li>
+									<li><a href="#"><i class="icon-linkedin"></i></a></li>
+									<li><a href="#"><i class="icon-dribbble"></i></a></li>
+								</ul>
 							</p>
 						</div>
+						<div class="col-md-6 colorlib-widget text-right">
+							<h4>Contact Info</h4>
+							<ul class="colorlib-footer-links">
+								<li>Microsoft Hyderabad</li>
+								<li><a href="tel://1234567920"><i class="icon-phone"></i> + 91 000 000 5555</a></li>
+								<li><a href="mailto:info@yoursite.com"><i class="icon-envelope"></i>msbiochaindummy@microsoft.com</a></li>
+								<li><a href="http://aka.ms/Biochain"><i class="icon-location4"></i>Microsoft Biochain</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
-	</div>
+				<div class="copy">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<p>
+									<small class="block">&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small><br> 
+									<small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a>, <a href="http://pexels.com/" target="_blank">Pexels</a></small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	
+		<div class="gototop js-top">
+			<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+		</div>
 	
 	<!-- jQuery -->
 	<script src="../app/javascripts/jquery.min.js"></script>

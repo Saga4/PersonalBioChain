@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6, figure {
       font-weight: 400; }
       .colorlib-nav ul li a {
         position: relative;
-        font-size: 15px;
+        font-size: 25px;
         padding: 30px 12px;
         color: rgba(255, 255, 255, 0.7);
         -webkit-transition: 0.5s;
@@ -346,12 +346,13 @@ h1, h2, h3, h4, h5, h6, figure {
           padding: 0;
           color: white; }
         #colorlib-hero .flexslider .slider-text > .slider-text-inner h3 {
+          margin-top: 150px;
           margin-bottom: 30px;
           font-size: 50px;
           line-height: 1.3;
           font-weight: 900;
           text-transform: uppercase;
-          opacity: .8; }
+          opacity: .95; }
           @media screen and (max-width: 768px) {
             #colorlib-hero .flexslider .slider-text > .slider-text-inner h3 {
               font-size: 28px; } }
@@ -1607,7 +1608,7 @@ input[type="text"] {
     .colorlib-nav-toggle {
       display: block; } }
 
-.btn {
+/*.btn {
   margin-right: 4px;
   margin-bottom: 4px;
   font-size: 15px;
@@ -1714,7 +1715,7 @@ input[type="text"] {
   .btn-outline:hover, .btn-outline:focus, .btn-outline:active {
     -webkit-box-shadow: none;
     box-shadow: none; }
-
+*/
 .btn.with-arrow {
   position: relative;
   -webkit-transition: 0.3s;
@@ -1825,4 +1826,169 @@ input {
 
 .login100-form-btn:hover {
   background: #333333;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+.card-form {
+  width: 500px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+.card-form .form-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  background:#00356B ;
+  border-radius: 10px 10px 0 0;
+}
+.card-form .form-body {
+  padding: 10px;
+}
+.card-form .form-body .row {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.card-form .form-body .row button,input[type="file"] {
+  margin:0px;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #e8ebed;
+  color: #576366;
+  font-size: 14px;
+}
+
+.card-form .form-body .row input[type="text"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  margin: 0 15px;
+  height: 35px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #e8ebed;
+  color: #576366;
+  font-size: 14px;
+}
+
+.card-form .form-body .row select {
+  width: 100%;
+  margin: 0 15px;
+  height: 35px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #e8ebed;
+  color: #576366;
+  font-size: 14px;
+}
+
+.card-form .rule {
+  height: 2px;
+  background: #e8ebed;
+  margin: 0px 35px;
+  color: black;
+  text-align: center;
+}
+.card-form .form-footer {
+  margin: 0 25px 15px 25px;
+  padding: 15px 10px;
+}
+.card-form .form-footer a {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 40%;
+  background: #00356B;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.card-form .form-footer span {
+  margin-left: 8px;
+}
+
+label{
+  color: black;
+  margin-left: 2.5%;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00356B;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  color: #fff;
+  max-width: 90%;
+  padding: 2em 3em;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 0px 2px #131415;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 2.25em;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+a,
+a:visited {
+  color: white;
+  transition: 0.25s;
+}
+
+a:hover,
+a:focus {
+  color: white;
+}
+
+table tr th{
+  color:white;
+  text-align:left;
+  vertical-align:center;
+}
+
+#DocType{
+  background-color: rgb(20, 55, 107);
+  
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: rgb(20, 55, 107);
+  border-color:  rgb(20, 55, 107);
+}
+
+#reportTB{
+  background-color: rgb(20, 55, 107);
 }

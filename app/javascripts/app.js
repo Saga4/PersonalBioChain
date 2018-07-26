@@ -29,16 +29,16 @@ window.App = {
     // Get the initial account balance so it can be displayed.
     web3.eth.getAccounts(function(err, accs) {
       if (err != null) {
-        alert("There was an error fetching your accounts.");
+        //alert("There was an error fetching your accounts.");
         return;
       }
 
       if (accs.length == 0) {
-        alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
+        //alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
         return;
       }
 
-      alert("Accoount found!!");
+      //alert("Accoount found!!");
 
       accounts = accs;
       account = accounts[0];
@@ -48,6 +48,7 @@ window.App = {
 filereader:function(filepath)
   {
     var filereader = new FileReader()
+    var file = new File(filepath)
     filereader.readAsArrayBuffer(file)
     filereader.onload = function()
     {
@@ -65,33 +66,55 @@ filereader:function(filepath)
   
 
 
-// export async GetDataIpfs:function (multihash) {
-//   if (!isString(multihash)) {
-//     return new Error('multihash must be String')
-//   } else if (!multihash.startsWith('Qm')) {
-//     return new Error('multihash must start with "Qm"')
-//   }
+GetDataIpfs:function (multihash) {
+  if (!isString(multihash)) {
+    return new Error('multihash must be String')
+  } else if (!multihash.startsWith('Qm')) {
+    return new Error('multihash must start with "Qm"')
+  }
 
-//   return new Promise((resolve, reject) => {
-//     _ipfs.files.cat(multihash, (err, result) => {
-//       if (err) reject(new Error(err))
-//       resolve(result)
-//     })
-//   })
-// },
+  return new Promise((resolve, reject) => {
+    _ipfs.files.cat(multihash, (err, result) => {
+      if (err) reject(new Error(err))
+      resolve(result)
+    })
+  })
+},
 
-// export async AddObjectIPFS:function (obj) {
-//   const CID = await new Promise((resolve, reject) => {
-//     _ipfs.files.add(obj, (err, result) => {
-//       if (err) reject(new Error(err))
-//       resolve(result)
-//     })
-//   })
-//   console.log('CID:', CID)
-//   return CID
-// },
+AddObjectIPFS:function (obj) {
+  const CID = new Promise((resolve, reject) => {
+    _ipfs.files.add(obj, (err, result) => {
+      if (err) reject(new Error(err))
+      resolve(result)
+    })
+  })
+  console.log('CID:', CID)
+  return CID
+},
 
   //document.getElementById("Demo").onclick= function(){add();};
+
+upload:function() {
+    const reader = new FileReader();
+    reader.onloadend = function() {
+      const ipfs = window.IpfsApi('localhost', 5001) // Connect to IPFS
+      const buf = buffer.Buffer(reader.result) // Convert data into buffer
+      ipfs.files.add(buf, (err, result) => { // Upload buffer to IPFS
+        if(err) {
+          console.error(err)
+          return
+        }
+        let url = `https://ipfs.io/ipfs/${result[0].hash}`
+        console.log(`Url --> ${url}`)
+        // document.getElementById("url").innerHTML= url
+        // document.getElementById("url").href= url
+        // document.getElementById("output").src = url
+        alert(url);
+      })
+    }
+    // const photo = document.getElementById("photo");
+    // reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
+  },
 
   add: function() {
 console.log("add func");
@@ -102,10 +125,12 @@ console.log("add func");
     var stakeholder = document.getElementById("stakeholder").value;
     var docType = document.getElementById("doc-type").value;
     var docname = document.getElementById("docName").value;
-    var doc = "adress link";//document.getElementById("docName").value;
     var validFrom = document.getElementById("validfrom").value;
     var validTo = document.getElementById("validto").value;
-    var docId="abc";//AddObjectIPFS(filereader(filepath));
+    var docpath = document.getElementById("docpath").baseURI;
+    var filepath=self.AddObjectIPFS(self.filereader(docpath));
+
+    alert(filepath);
 
     //this.setStatus("Initiating record creation... (please wait)");
     var pd;
@@ -127,12 +152,12 @@ window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
     console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
-    alert("Error!!!");
+    //alert("Error!!!");
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
     console.warn("No web3 detected. Falling back to http://127.0.0.1:9545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
-    alert("Error!!!");
+    //alert("Error!!!");
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"));
   }
